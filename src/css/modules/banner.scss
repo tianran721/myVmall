@@ -1,0 +1,45 @@
+// 拉取图片一半
+#banner{
+    $imgWidth : 1920;
+    height : 550px;
+    ul{
+        position: relative;
+        left:50%;
+        margin-left: -$imgWidth/2 + px;
+        li{
+            @include posLT;
+            opacity: 0;
+            
+            &.show{ opacity: 1;}
+            transition: .5s;
+        }
+    }
+    ol{
+        position: absolute;
+        right:10px;
+        bottom: 10px;
+        z-index: 100;
+        li{
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            border:1px beige solid;
+            background:white;
+            float:left;
+            margin-right:10px;
+            &.active{ background:coral; }
+        }
+    }
+    .banner-mask{
+        position: absolute;
+        bottom:0;
+
+        width:$imgWidth + px;
+        height:400px;
+        left:50%;
+        margin-left : -$imgWidth/2 + px;
+        
+        background:url(/static/img/bg-slide.png) center bottom no-repeat;
+    }
+}
+
